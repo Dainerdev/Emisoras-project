@@ -1,5 +1,5 @@
 <?php
-require_once 'php-activerecord/ActiveRecord.php';
+require_once $_SERVER["DOCUMENT_ROOT"] . 'emisoras/libs/orm/ActiveRecord.php';
 
  ActiveRecord\Config::initialize(function($cfg)
  {
