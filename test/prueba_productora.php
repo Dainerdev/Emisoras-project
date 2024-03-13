@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/Productora.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/Productora.php";
 
 $prod = new Productora();
 $prod-> rfc = '901023456-2';

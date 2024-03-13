@@ -1,7 +1,7 @@
 <?php
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/Transmision.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/Emisora.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/Transmision.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/Emisora.php";
 
 $emi = new Emisora();
 $emi-> nombre = 'Tropicana';
@@ -23,7 +23,6 @@ try {
     }else {        
         echo "Error al intentar guardar la emisora: " . $msj;
     }
-    
 }
 
 

@@ -1,9 +1,9 @@
 <?php
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/Consorcio.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/Persona.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/Programa.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/Genero.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/Consorcio.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/Persona.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/Programa.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/Genero.php";
 
 $prog = new Programa();
 $prog-> nombre = 'Noche de Luna';

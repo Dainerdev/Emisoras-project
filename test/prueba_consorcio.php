@@ -1,8 +1,8 @@
 <?php
 
-require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/Consorcio.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/Productora.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/Emisora.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/Consorcio.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/Productora.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/Emisora.php";
 
 $cons = new Consorcio();
 $cons-> emisora_id = 'La Mega';
