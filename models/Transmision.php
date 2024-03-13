@@ -8,9 +8,12 @@ class Transmision extends ActiveRecord\Model{
 
     // Relación uno a muchos con la clase Emisora
     public static $has_many = array(
-        array('emisoras', 'class_name' => 'Emisora', 'foreign_key' => 'transmision_id')
+        array('emisoras')
     );
 
-
-
 }
+
+/*
+    $radio = Emisora::first();
+    print_r($radio-> emisoras);
+*/

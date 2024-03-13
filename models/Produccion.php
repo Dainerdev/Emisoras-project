@@ -6,4 +6,7 @@ class Produccion extends ActiveRecord\Model{
     static $table_name = 'producciones';
     static $primary_key = 'tipo';
 
+    public static $has_many = array(
+        array('personas')
+    );
 }

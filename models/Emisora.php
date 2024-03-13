@@ -7,17 +7,16 @@ class Emisora extends ActiveRecord\Model{
     static $primary_key = 'nombre';
 
 
-
-
     // Relación muchos a uno con la clase Transmision
     public static $belongs_to = array(
-        array('transmision', 'class_name' => 'Transmision', 'foreign_key' => 'transmision_id')
+        array('transmision'),
+        array('consorcio')
     );
 
     // Relación uno a muchos con la clase EmitirPrograma
-    static $has_many = array(
-        array('emitir_programas', 'class_name' => 'EmitirPrograma', 'foreign_key' => 'emisora_id')
+    public static $has_many = array(
+        array('emitirProgramas'),
+        array('emitirResumenes')
     );
-
 
 }

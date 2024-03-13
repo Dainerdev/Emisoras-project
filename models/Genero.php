@@ -7,7 +7,8 @@ class Genero extends ActiveRecord\Model{
     static $primary_key = 'nombre';
 
 
-    public static $has_many = array(array("Programas")
-    , array(""));    #le pertenece a (uno a uno)
+    public static $has_many = array(
+        array("Programas")
+    );    #le pertenece a (uno a uno)
 
 }
