@@ -8,7 +8,7 @@ class Transmision extends ActiveRecord\Model{
 
     // Relación uno a muchos con la clase Emisora
     public static $has_many = array(
-        array('emisoras')
+        array('emisoras', 'class_name' => 'Emisora')
     );
 
 }

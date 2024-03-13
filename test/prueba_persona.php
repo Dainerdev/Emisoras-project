@@ -1,0 +1,33 @@
+<?php
+
+require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/Produccion.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/Rol.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/Persona.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/Productora.php";
+
+$per = new Persona();
+$per-> cedula = '1008765432';
+$per-> nombre = 'María Alejandra Gomez Martinez';
+$per-> productora_id = '901023456-2';
+$per-> rol_id = 'Conductor';
+$per-> produccion_id = 'N/A';
+$per-> programa_id = 'Noche de Luna';
+$per-> progResumen_id = '';
+
+try {
+    $per-> save();
+    $total = Persona::count();
+    echo "Persona registrada exitosamente.<br>";
+    echo "Total: $total Personas almacenadas.";
+
+} catch (Exception $error) {
+    $msj = $error-> getMessage();
+    if (strstr($msj, "Duplicate") !== false) {
+        echo "La persona que intentas guardar ya existe. <br>";
+        $total = Persona::count();
+        echo "Total: $total Personas almacenadas.";
+    }else {        
+        echo "Error al intentar guardar la persona: " . $msj;
+    }
+    
+}

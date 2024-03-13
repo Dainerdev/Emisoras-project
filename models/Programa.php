@@ -12,8 +12,8 @@ class Programa extends ActiveRecord\Model{
     );    #le pertenece a (uno a uno)
 
     public static $has_many = array(
-        array('programasResumenes'),
-        array('programasRealizan'),
+        array('programasResumenes', 'class_name' => 'ProgramaResumen'),
+        array('programasRealizan', 'class_name' => 'ProgramaRealizar'),
         array('emitirProgramas'),
         array('personas')
     );
