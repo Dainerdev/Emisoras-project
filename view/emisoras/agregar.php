@@ -37,7 +37,7 @@ $msj = @$_REQUEST["msj"];
                         <input type="reset" id="limpiar" value="Limpiar">&nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="submit" id="accion" name="accion" value="Guardar">
                     </td>
-                </tr>
+                </tr>   
             </table>
         </form>
         <!-- Mostrar el mensaje enviado por el controlador -->

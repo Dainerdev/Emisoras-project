@@ -16,8 +16,8 @@ $msj = @$_REQUEST["msj"];
         <h1>MENSAJE</h1>
         <hr>
         <!-- Mostrar el msj enviado por el controlador -->
-        <span style="color: #900D40; background-color: #FAD7CE;">
-            <?= ($msj != NULL || isset($msj)) ? : "" ?>
+        <span style="color: #900D40; background-color: #FAD7CE; padding: 5px;">
+            <?= ($msj != NULL || isset($msj)) ? $msj : "" ?>
         </span>
     </center>
 </body>
