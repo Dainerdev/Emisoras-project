@@ -36,29 +36,29 @@
                 </tr>
                 <tr>
                     <th style="text-align: right;">Frecuencia: </th>
-                    <td><input id="frec" name="frec" readonly
+                    <td><input id="frec" name="frec"
                     value="<?= @$u-> frecuencia ?>"></td>
                 </tr>
                 <tr>
                     <th style="text-align: right;">Transmisión: </th>
-                    <td><input type="text" id="trans" name="trans" readonly
+                    <td><input type="text" id="trans" name="trans"
                     value="<?= @$u-> transmision_id ?>"></td>
                 </tr>
                 <tr>
                     <td colspan="4" style="text-align: right;">
-                        <input type="button" id="limpiar" value="Limpiar" onclick="cleanForm()">&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="button" id="limpiar" name="accion" value="Limpiar" onclick="cleanForm()">&nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="submit" id="buscar" name="accion" value="Buscar">&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="submit" id="editar" name="accion" value="Editar">&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="submit" id="eliminar" name="accion" value="Eliminar">
+                        <input type="submit" id="editar" name="accion" value="Editar" >&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="submit" id="eliminar" name="accion" value="Eliminar" >
                     </td>
                 </tr>
             </table>
         </form>
         <!-- Mostrar el mensaje enviado por el controlador -->
-        <span style="color: red;"><?= ($msj != NULL || isset($msj)) ? $msj : "" ?></span>
+        <span style="color: red; padding: 5px; border-radius: 4px;"><?= ($msj != NULL || isset($msj)) ? $msj : "" ?></span>
     </center>   
     <script>
-        habilitarBotones();        
+        habilitarBotones();       
     </script> 
 </body>
 </html>

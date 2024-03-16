@@ -55,8 +55,32 @@ function habilitarBotones(){
     }
 }
 
+/***
+* Funcion JS:
+* Objetivo: 
+*** Hacer la limpieza de los campos
+*/
+
+// Funcion para limpiar los campos del formulario
 function cleanForm() {
-    document.getElementById('nombre').value = '';  // Limpiar el campo nombre
-    document.getElementById('frec').value = '';  // Limpiar el campo frecuencia
-    document.getElementById('trans').value = '';  // Limpiar el campo transmisión
+    document.getElementById('nombre').value = "";  // Limpiar el campo nombre
+    document.getElementById('frec').value = "";  // Limpiar el campo frecuencia
+    document.getElementById('trans').value = "";  // Limpiar el campo transmisión
 }
+
+/***
+* Funcion JS:
+* Objetivo: 
+*** Confirmar el proceso de editar o eliminar una emisora
+*/
+
+
+
+
+
+
+
+
+
+
+

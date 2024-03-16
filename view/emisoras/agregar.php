@@ -26,7 +26,7 @@ $msj = @$_REQUEST["msj"];
                     <td><input id="frec" name="frec" required placeholder="Frecuencia Hz"></td>
                 </tr>
                 <tr>
-                    <th style="text-align: right">Transmision </th>
+                    <th style="text-align: right">Transmisión </th>
                     <td><input type="text" id="trans" name="trans" required placeholder="Indique AM o FM"></td>
                 </tr>
                 <tr>
@@ -34,14 +34,14 @@ $msj = @$_REQUEST["msj"];
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align: right;">
-                        <input type="reset" id="limpiar" value="Limpiar">&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="submit" id="accion" name="accion" value="Guardar">
+                        <button type="reset" id="limpiar" value="Limpiar">Limpiar</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button type="submit" id="accion" name="accion" value="Guardar">Guardar</button>
                     </td>
                 </tr>   
             </table>
         </form>
         <!-- Mostrar el mensaje enviado por el controlador -->
-        <span style="color: red;"><?= ($msj != NULL || isset($msj)) ? $msj : "" ?></span>
+        <span style="color: red; padding: 5px; border-radius: 4px;"><?= ($msj != NULL || isset($msj)) ? $msj : "" ?></span>
     </center>
 </body>
 </html>
