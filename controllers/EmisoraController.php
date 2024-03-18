@@ -78,7 +78,7 @@ class EmisoraController {
             $msj = "Emisora guardada correctamente, total: $total";
 
             // Redireccionar a la pagina guardar enviando un mensaje
-            header("Location: ../view/emisoras/agregar.php?msj=$msj");
+            header("Location: ../view/forms/emisoras/agregar.php?msj=$msj");
             exit;
 
         } 
@@ -98,7 +98,7 @@ class EmisoraController {
             }
 
             // Redireccionar a la pagina con el mensaje de error
-            header("Location: ../view/emisoras/agregar.php?msj=$msj");
+            header("Location: ../view/forms/emisoras/agregar.php?msj=$msj");
             exit;
         }
     }
@@ -119,11 +119,11 @@ class EmisoraController {
             $msj = "Emisora encontrada";
 
             // Redireccionar la pagina al buscar, enviando un msj
-            header("Location: ../view/emisoras/buscar.php?msj=$msj");
+            header("Location: ../view/forms/emisoras/buscar.php?msj=$msj");
             exit;
 
             $_SESSION["emisora.find"] = NULL;
-            header("Location: ../view/emisoras/buscar.php");
+            header("Location: ../view/forms/emisoras/buscar.php");
             exit;
 
         } 
@@ -144,7 +144,7 @@ class EmisoraController {
 
             // Redureccionamos a la pagina buscar con el mensaje de error
             $_SESSION["emisora.find"] = NULL;
-            header("Location: ../view/emisoras/buscar.php?msj=$msj");
+            header("Location: ../view/forms/emisoras/buscar.php?msj=$msj");
         }
 
     }
@@ -163,7 +163,7 @@ class EmisoraController {
         // Validamos que la emisora consultada sea la misma que se desea editar
         if ($u->nombre != $nombre) {
             $msj = "El nombre no corresponde con la Emisora consultada";
-            header("Locate: ../view/emisoras/buscar.php?msj=$msj");
+            header("Locate: ../view/emisoras/forms/buscar.php?msj=$msj");
             exit;
         }
 
@@ -188,7 +188,7 @@ class EmisoraController {
             $msj = "Emisora editada";
 
             // Redireccionar la pagina al buscar, enviando un msj
-            header("Location: ../view/emisoras/buscar.php?msj=$msj");
+            header("Location: ../view/forms/emisoras/buscar.php?msj=$msj");
             exit;
 
         } 
@@ -207,7 +207,7 @@ class EmisoraController {
 
             // Redureccionamos a la pagina buscar con el mensaje de error
             $_SESSION["emisora.find"] = NULL;
-            header("Location: ../view/emisoras/buscar.php?msj=$msj");
+            header("Location: ../view/forms/emisoras/buscar.php?msj=$msj");
             exit;
         }
 
@@ -227,7 +227,7 @@ class EmisoraController {
         // Validamos que la emisora consultada sea la misma que se desea editar
         if ($u->nombre != $nombre) {
             $msj = "El nombre no corresponde con la Emisora consultada";
-            header("Locate: ../view/emisoras/buscar.php?msj=$msj");
+            header("Locate: ../view/forms/emisoras/buscar.php?msj=$msj");
             exit;
         }
 
@@ -245,7 +245,7 @@ class EmisoraController {
             $msj = "Emisora eliminada, Total: $total";
 
             // Redireccionar la pagina al buscar, enviando un msj
-            header("Location: ../view/emisoras/buscar.php?msj=$msj");
+            header("Location: ../view/forms/emisoras/buscar.php?msj=$msj");
             exit;
 
         } 
@@ -264,7 +264,7 @@ class EmisoraController {
 
             // Redureccionamos a la pagina buscar con el mensaje de error
             $_SESSION["emisora.find"] = NULL;
-            header("Location: ../view/emisoras/buscar.php?msj=$msj");
+            header("Location: ../view/forms/emisoras/buscar.php?msj=$msj");
             exit;
         }
 
@@ -272,14 +272,15 @@ class EmisoraController {
 
     public static function listarTodo(){
 
-        try {            
+        try {  
+                      
             // Obtenemos todas la emisoras
             $emisoras = Emisora::all();
             if ($emisoras == NULL) {
                 $_SESSION["emisoras.all"];
                 $msj = "Total Emisoras: 0";
             } else {
-                $total = count($emisoras);
+                $total = count($emisoras) -1;
 
                 // Convertimos a texto (serializamos)
                 $emisoras = serialize($emisoras);
@@ -292,10 +293,12 @@ class EmisoraController {
 
             // Redireccionamos a la pagina de reportes
             $msj = "Total Emisoras: $total";
-            header("Location: ../view/emisoras/listarEmisoras.php?msj=$msj");
+            header("Location: ../view/forms/emisoras/listarEmisoras.php?msj=$msj");
+
         } catch (Exception $error) {
             $_SESSION["emisoras.all"] = NULL;
-            header("Location: ../view/emisoras/listarEmisoras.php?msj=Total Emisoras: 0");
+            header("Location: ../view/forms/emisoras/listarEmisoras.php?msj=Total Emisoras: 0");
+
         }
     }
 }

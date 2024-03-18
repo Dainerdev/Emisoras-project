@@ -8,14 +8,14 @@ $msj = @$_REQUEST["msj"];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar emisoras</title>
+    <title>Agregar Emisoras</title>
 </head>
 <body>    
     <center>
         <h1>AGREGAR USUARIOS</h1>
         <hr>
         <!-- FORMULARIO HTML -->
-        <form action="../../controllers/EmisoraController.php" method="POST">
+        <form action="../../../controllers/EmisoraController.php" method="post">
             <table>
                 <tr>
                     <th style="text-align: right">Nombre </th>

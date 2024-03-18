@@ -6,6 +6,8 @@ class Persona extends ActiveRecord\Model{
     static $table_name = 'personas';
     static $primary_key = 'cedula';
 
+    public $progResumen_id;
+
     static $belongs_to = array(
         array('productora', 'foreign_key' => 'productora_id'),
         array('rol', 'foreign_key' => 'rol_id'),

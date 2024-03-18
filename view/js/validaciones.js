@@ -63,9 +63,12 @@ function habilitarBotones(){
 
 // Funcion para limpiar los campos del formulario
 function cleanForm() {
+    document.getElementById('rfc').value = "";
+    document.getElementById('tel').value = "";
     document.getElementById('nombre').value = "";  // Limpiar el campo nombre
     document.getElementById('frec').value = "";  // Limpiar el campo frecuencia
     document.getElementById('trans').value = "";  // Limpiar el campo transmisión
+    
 }
 
 /***

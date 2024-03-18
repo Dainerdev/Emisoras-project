@@ -20,14 +20,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscar emisoras</title>
-    <script src="../js/validaciones.js"></script>
+    <script src="../../js/validaciones.js"></script>
 </head>
 <body>
     <center>
         <h1>BUSCAR EMISORAS</h1>
         <hr>
         <!-- Formulario HTML -->
-        <form action="../../controllers/EmisoraController.php" method="POST" id="searchForm">
+        <form action="../../../controllers/EmisoraController.php" method="POST" id="searchForm">
             <table>
                 <tr>
                     <th style="text-align: right;">Nombre: </th>

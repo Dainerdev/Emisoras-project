@@ -18,16 +18,18 @@ $nombre = 'noche de Luna';
 try {
 
     $prog = Programa::find($nombre);
+    $cons = $prog-> consorcio;
+    $emi = $cons-> emisora;
+    echo $emi-> nombre . " - Programas:<br><br>";
     echo "<b>Nombre: </b>" . $prog-> nombre . "<br>";
     echo "<b>Género: </b>" . $prog-> genero_id . "<br>";
 
-    $cons = $prog-> consorcio;
+    
     echo "----------------------------------------<br>";
     echo "Consorcio:<br>";    
-    echo "<b>Productora: </b>" . $cons-> productora_id. "<br>";
+    echo "<b>Productora: </b>" . $cons-> productora_id . "<br>";
     
     $emi = $cons-> emisora;
-    echo "<b>Nombre: </b>" . $emi-> nombre . "<br>";
     echo "<b>Frecuencia: </b>" . $emi-> frecuencia . "<br>";
     echo "<b>Transmision: </b>" . $emi-> transmision_id . "<br>";    
     echo "----------------------------------------<br>";
