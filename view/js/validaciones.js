@@ -63,6 +63,8 @@ function habilitarBotones(){
 
 // Funcion para limpiar los campos del formulario
 function cleanForm() {
+    document.getElementById('emi').value = "";
+    document.getElementById('produ').value = "";
     document.getElementById('rfc').value = "";
     document.getElementById('tel').value = "";
     document.getElementById('nombre').value = "";  // Limpiar el campo nombre

@@ -26,16 +26,17 @@ $msj = @$_REQUEST["msj"];
                 <div class="input-group">
                     <b style="color: red;">* </b>
                     <label for="nombre">Nombre: </label>
-                    <input type="text" id="nombre" name="nombre">
+                    <input type="text" id="nombre" name="nombre" required>
                 </div>
                 <div class="input-group">
                     <b style="color: red;">* </b>
                     <label for="tel">Teléfono: </label>
-                    <input type="text" id="tel" name="tel">
+                    <input type="text" id="tel" name="tel" required>
                 </div>
 
                 <input type="reset" id="limpiar" value="Limpiar">
                 <input type="submit" id="accion" name="accion" value="Guardar">
+                <a href="../../forms/productoras/index.php"><input type="button" id="volver" value="Volver"></a>
             </div>
             <div class="line"></div>
             <div class="alert">

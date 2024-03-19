@@ -33,7 +33,7 @@ body {
     padding: 50px;
     background-color: #F2F0FA;
     border-radius: 32px;
-    box-shadow: 0 0 40px 0 rgba(62, 62, 62, 0.5);
+    box-shadow: 0 0 40px 0 #00000059;
 
 } .container-form .form {    
     width: 100%;
@@ -83,7 +83,6 @@ body {
     color: #fff;
     cursor: pointer;
     display: inline-block;
-    font-family: "Roboto";
     font-size: 16px;
     padding: 15px;
     right: 50%;   
@@ -98,7 +97,8 @@ body {
     margin-left: 40px;
 
 }.container-form .form input[type="submit"]:hover , .container-form .form input[type="button"]:hover {
-    background: #A191E6;     
+    background: #A191E6; 
+    
 }
 
 .line {
@@ -142,9 +142,32 @@ body {
     margin-left: 40px;
     font-size: 30px;
     margin-top: 25%;
-    margin-left: 25%;
+    margin-left: 20%;
+    margin-right: 20px;
 }
 
 p {
     margin-bottom: 30px;
+}
+
+.steps-group input[id="volver"] {
+    background: #F2F0FA;
+    border-radius: 10px;
+    border: 2px solid #745AE2;
+    color: #0B0815;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 20%;
+    margin-top: 10%;
+    font-size: 16px;
+    padding: 15px; 
+    width: 150px; 
+    box-shadow: 4px 4px 16px 0 rgba(62, 62, 62, 0.3);
+    transform: translate(50%,50%);
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+}.steps-group input[id="volver"]:hover {
+    background: #9d78fa;     
 }

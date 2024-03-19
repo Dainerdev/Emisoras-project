@@ -5,28 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styleIndex.css">
     <link rel="stylesheet" type="text/css" href="../../css/styleIndex.php">
-    <title>Menu - Emisoras</title>
+    <title>Menu - Consorcios</title>
 </head>
 <body>
     <div class="container">
         <div class="title">
-            <h1>MENU - EMISORAS</h1>
+            <h1>MENU - CONSORCIOS</h1>
         </div>
         <div class="line"></div>
         <div class="options">
             <div id="Agregar">
-                <a href="../../../view/forms/emisoras/agregar.php">
+                <a href="../../../view/forms/consorcios/agregar.php">
                     <img id="add" src="../../img/add.png"><p id="add">Agregar</p>
                 </a>
             </div>
             <div id="Buscar">
-                <a href="../../../view/forms/emisoras/buscar.php">
+                <a href="../../../view/forms/consorcios/buscar.php">
                     <img id="search" src="../../img/search.png">
                     <p id="search">Buscar, edita o elimina</p>
                 </a>
             </div>
             <div id="Listar">
-                <a href="../../../controllers/EmisoraController.php?accion=todo">
+                <a href="../../../controllers/ConsorcioController.php?accion=todo">
                     <img id="list" src="../../img/list.png"><p id="list">Listar</p></a>
             </div>
         </div>        

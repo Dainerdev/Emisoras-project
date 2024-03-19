@@ -4,11 +4,11 @@
     session_start();
     require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/Productora.php";
     require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/Consorcio.php";
-    require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/Persona.php";
+    require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/Emisora.php";
 
     $msj = @$_REQUEST["msj"];
-    $productoras = @$_SESSION["productoras.find"];    
-    $productoras = unserialize($productoras); 
+    $consorcios = @$_SESSION["consorcios.find"];    
+    $consorcios = unserialize($consorcios); 
     
 ?>
 
@@ -18,14 +18,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../css/styleListas.php">
-    <title>Lista - Productoras</title>
+    <title>Lista - Consorcios</title>
 </head>
 <body>
     <?php
-    if (count($productoras) <= 0) {
+    if (count($consorcios) <= 0) {
     ?>
         <span style="color: #900D40; background-color: #FAD7CE; padding: 5px; border-radius: 4px;">
-            No se encuentran productoras registradas.
+            No se encuentran consorcios registradas.
         </span>
         <?php
         } 
@@ -33,29 +33,27 @@
     ?>
         <div class="container">
             <div class="head">
-                <h1 class="title">LISTA - PRODUCTORAS</h1>
+                <h1 class="title">LISTA - CONSORCIOS</h1>
                 <div class="line"></div>
                 <div>
-                    <a href="../../forms/productoras/index.php"><input type="hidden" id="volver">
+                    <a href="../../forms/consorcios/index.php"><input type="hidden" id="volver">
                     <img id="back" src="../../img/back.png"></a> 
                 </div>
             </div>
-
+            
             <?php
-            $productoras = Productora::find('all', array('conditions' => array('rfc != ?', '00000000-NA')));
-            foreach ($productoras as $i => $p) {
+            $consorcios = Consorcio::find('all', array('conditions' => array('emisora_id != ?', 'N/A')));
+            foreach ($consorcios as $i => $p) {
             ?>
                 <div>
                     <div class="card">
                         <div class="idx">
-                            <p>RFC</p>
-                            <p>Nombre</p>
-                            <p>Teléfono</p>
+                            <p>Emisora</p>
+                            <p>Productora</p>
                         </div>
                         <div class="info">
-                            <p><?= $p-> rfc ?></p>
-                            <p><?= $p-> nombre ?></p>
-                            <p><?= $p-> telefono ?></p>
+                            <p><?= $p-> emisora_id ?></p>
+                            <p><?= $p-> productora_id ?></p>
                         </div>
                     </div>
                 </div>

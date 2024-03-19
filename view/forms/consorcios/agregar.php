@@ -10,33 +10,27 @@ $msj = @$_REQUEST["msj"];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../css/styleAdd.php">
     <link rel="stylesheet" href="../../js/validaciones.js">
-    <title>Agregar - Emisoras</title>
+    <title>Agregar - Consorcios</title>
 </head>
 <body>
     <div class="container-form">
-        <form action="../../../controllers/EmisoraController.php" class="form" method="post">
+        <form action="../../../controllers/ConsorcioController.php" class="form" method="post">
             <div>
-                <div class="title-form"><h3>AGREGAR EMISORAS</h3></div>
+                <div class="title-form"><h3>AGREGAR CONSORCIOS</h3></div>
                 <br>
                 <div class="input-group">
                     <b style="color: red;">* </b>
-                    <label for="nombre">Nombre: </label>
-                    <input type="text" id="nombre" name="nombre" required>
+                    <label for="emi">Emisora: </label>
+                    <input type="text" id="emi" name="emi" required placeholder="Nombre">
                 </div>
                 <div class="input-group">
                     <b style="color: red;">* </b>
-                    <label for="frec">Frecuencia: </label>
-                    <input type="text" id="frec" name="frec" required>
+                    <label for="produ">Productora: </label>
+                    <input type="text" id="produ" name="produ" required placeholder="RFC">
                 </div>
-                <div class="input-group">
-                    <b style="color: red;">* </b>
-                    <label for="trans">Transmisión: </label>
-                    <input type="text" id="trans" name="trans" required placeholder="AM o FM">
-                </div>
-
                 <input type="reset" id="limpiar" value="Limpiar">
                 <input type="submit" id="accion" name="accion" value="Guardar">
-                <a href="../../forms/emisoras/index.php"><input type="button" id="volver" value="Volver"></a>
+                <a href="../../forms/consorcios/index.php"><input type="button" id="volver" value="Volver"></a>
             </div>
             <div class="line"></div>
             <div class="alert">
@@ -46,3 +40,4 @@ $msj = @$_REQUEST["msj"];
     </div>
 </body>
 </html>
+

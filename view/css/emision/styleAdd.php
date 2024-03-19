@@ -45,9 +45,9 @@ body {
      
 } .container-form .form .input-group input[type="text"] {
     color: #0B0815;
-    width: 100%;
+    width: 20%;
     outline: none;
-    padding: 15px;
+    padding: 10px;
     background: none;
     border: none;
     border-bottom: 2px solid #A191E6;
@@ -76,7 +76,7 @@ body {
     line-height: 12px;
     color: #B6B6B6;
 
-} .container-form .form input[value="Guardar"], .container-form .form input[id="limpiar"], .container-form .form input[id="volver"] {
+} .container-form .form input[value="Guardar"], .container-form .form input[id="limpiar"], .container-form .form input[id="volver"]{
     background: #5C42CC;
     border-radius: 10px;
     border: 2px solid #745AE2;
@@ -88,6 +88,7 @@ body {
     right: 50%;   
     width: 120px;
     margin-left: -40px;
+    margin-top: 15px;
     box-shadow: 4px 4px 16px 0 rgba(62, 62, 62, 0.3);
     transform: translate(50%,50%);
     -webkit-transition: all 0.3s ease;
@@ -100,6 +101,66 @@ body {
 }.container-form .form input[type="submit"]:hover , .container-form .form input[type="reset"]:hover {
     background: #A191E6; 
     
+} 
+
+div[id="fecha"] label, b {
+    margin-top: 13px;
+}
+
+input[type="date"] {
+    background-color: #F2F0FA;
+    padding: 10px;
+    position: relative;
+    transform: translate(10px, 0);
+    color: #5C42CC;
+    font-family: "Roboto Mono", monospace;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px 0 rgba(62, 62, 62, 0.3);
+}
+::-webkit-calendar-picker-indicator{
+    background-color: #A191E6;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 8px 0 rgba(62, 62, 62, 0.3);
+}
+
+input[type="time"] {
+    background-color: #F2F0FA;
+    padding: 10px;
+    position: relative;
+    transform: translate(10px, 0);
+    color: #5C42CC;
+    font-family: "Roboto Mono", monospace;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px 0 rgba(62, 62, 62, 0.3);
+}
+
+div[id="hour"]{
+    float: left;
+}
+
+div[id="lapse"]{
+    float: right;
+    margin-right: 20px;
+}
+
+div[id="repet"]{
+    margin-top: 20%;
+}
+
+div[id="fecha"]{
+    position: relative;
+    display: flex;
+    float: right;
+    margin-right: 20px;
+    margin-top: -62px;
 }
 
 .line {
