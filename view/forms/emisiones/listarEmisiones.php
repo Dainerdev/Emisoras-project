@@ -53,7 +53,7 @@
                         </div>
                         <div class="info">
                             <p><?= $p-> id ?></p>
-                            <p><?= $p-> fecha ?></p>
+                            <p><?= $fecha = date('D, d M Y', strtotime($p-> fecha)) ?></p>
                             <p><?= $p-> duracion ?></p>
                             <p><?= $p-> repeticion ?></p>
                         </div>

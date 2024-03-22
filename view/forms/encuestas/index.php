@@ -11,8 +11,12 @@
     <div class="container">
         <div class="title">
             <h1>MENU - ENCUESTAS</h1>
+            <div class="line"></div>
+            <div>
+                <a href="../../index.php"><input type="hidden" id="volver">
+                <img id="back" src="../../img/back.png"></a> 
+            </div>
         </div>
-        <div class="line"></div>
         <div class="options">
             <div id="Agregar">
                 <a href="../../../view/forms/encuestas/agregar.php">

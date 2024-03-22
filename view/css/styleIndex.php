@@ -13,6 +13,25 @@ body {
     margin-top: 5%;
     text-align: center;
     color: #5C42CC;
+
+} .container .title input[id="volver"], img[id="back"] {
+    position: absolute;
+    background: #F2F0FA;
+    border-radius: 10px;
+    color: #0B0815;  
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    padding: 15px;
+    right: 75%;   
+    width: 30px;
+    height: 30px;
+    margin-top: -12dvh;
+    margin-left: -50%;
+    box-shadow: 0 0 6px 0 #d7bff8;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .line {

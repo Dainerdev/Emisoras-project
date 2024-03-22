@@ -54,7 +54,7 @@
                         </div>
                         <div class="info">
                             <p><?= $p-> id ?></p>
-                            <p><?= $fecha = date('D, d M Y', strtotime($p-> fecha)); ?></p>
+                            <p><?= $fecha = date('D, d M Y', strtotime($p-> fecha)) ?></p>
                             <p><?= $p-> aprovaciones ?></p>
                             <p><?= $p-> indiferencias ?></p>
                             <p><?= $p-> rechazos ?></p>
