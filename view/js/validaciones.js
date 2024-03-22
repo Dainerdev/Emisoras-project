@@ -63,15 +63,17 @@ function habilitarBotones(){
 
 // Funcion para limpiar los campos del formulario
 function cleanForm() {
-    document.getElementById('emi').value = "";
-    document.getElementById('produ').value = "";
-    document.getElementById('rfc').value = "";
-    document.getElementById('tel').value = "";
-    document.getElementById('nombre').value = "";  // Limpiar el campo nombre
-    document.getElementById('frec').value = "";  // Limpiar el campo frecuencia
-    document.getElementById('trans').value = "";  // Limpiar el campo transmisión
-    
+    const inputs = document.querySelectorAll("input[type='text']");
+
+  // Recorre cada campo y limpia su valor
+  for (const input of inputs) {
+    input.value = "";
+  }
 }
+
+// Asigna la función `limpiarCampos` al evento `click` del botón
+document.getElementById("limpiar").addEventListener("click", limpiarCampos);
+
 
 /***
 * Funcion JS:

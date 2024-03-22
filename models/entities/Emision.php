@@ -3,14 +3,14 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/libs/config.php";
 
 class Emision extends ActiveRecord\Model{
     
-    static $table_name = 'emisiones';
+    static $table_name = 'emisiones';  
+
+    public $horaInicio;
     
-    public static $belongs_to = array(
-        array('encuesta')
-    );
+    static $validates_presence_of = array('duracion', 'repeticion', 'fecha', 'horaInicio');
 
     public static $has_many = array(
-        array('programasRealizan'),
-        array('resumensRealizan')
+        array('programaRealizar'),
+        array('resumenRealizar')
     );
 }

@@ -25,10 +25,10 @@ body {
 
 .container-form {    
     position: absolute;
-    top: 30%;
+    top: 25%;
     left: 50%;
     width: 600px;
-    height: 750px;
+    height: 850px;
     margin-top: -200px;
     margin-left: -450px;
     padding: 50px;
@@ -44,7 +44,7 @@ body {
     position: relative;
     margin-bottom: 20px;
      
-} .container-form .form .input-group input[type="text"] {
+} .container-form .form .input-group input[type="text"], .container-form .form .input-group input[type="number"] {
     color: #0B0815;
     width: 100%;
     outline: none;
@@ -54,6 +54,10 @@ body {
     border-bottom: 2px solid #A191E6;
 
 } .container-form .form .input-group input[type="text"]:focus, .container-form .form .input-group input[type="text"]:active {
+    outline: none;
+    border-bottom: 2px solid #5C42CC;
+
+} .container-form .form .input-group input[type="number"]:focus, .container-form .form .input-group input[type="number"]:active {
     outline: none;
     border-bottom: 2px solid #5C42CC;
 
@@ -77,7 +81,7 @@ body {
     line-height: 12px;
     color: #B6B6B6;
 
-} .container-form .form input[type="submit"], .container-form .form input[type="button"] {
+} .container-form .form input[type="submit"], .container-form .form input[type="reset"] {
     background: #5C42CC;
     border-radius: 10px;
     border: 2px solid #745AE2;
@@ -86,18 +90,18 @@ body {
     display: inline-block;
     font-size: 16px;
     padding: 15px;
-    right: 50%;   
-    width: 150px; 
+    width: 100px; 
     box-shadow: 4px 4px 16px 0 rgba(62, 62, 62, 0.3);
     transform: translate(50%,50%);
     -webkit-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
+    margin-left: -40px;
 
 } .container-form .form input[type="submit"] { 
-    margin-left: 40px;
+    margin-left: 20px;
 
-}.container-form .form input[type="submit"]:hover , .container-form .form input[type="button"]:hover {
+}.container-form .form input[type="submit"]:hover , .container-form .form input[type="reset"]:hover {
     background: #A191E6; 
     
 }
@@ -111,10 +115,9 @@ body {
 }
 
 .container-form .form input[id="editar"], .container-form .form input[id="eliminar"]  { 
-    margin-top: 40px;
-    margin-left: 0;
+    margin-left: 20px;
 } .container-form .form input[id="eliminar"] {
-    margin-left: 40px;
+    margin-left: 20px;
 }
 
 .alert {
@@ -126,10 +129,10 @@ body {
 .steps-group {
     position: absolute;
     z-index: -1;
-    top: 30%;
+    top: 26.5%;
     left: 50%;
     width: 500px;
-    height: 750px;
+    height: 850px;
     margin-top: -225px;
     margin-left: 250px;
     padding: 50px;
@@ -172,3 +175,27 @@ p {
 }.steps-group input[id="volver"]:hover {
     background: #9d78fa;     
 }
+
+input[type="date"] {
+    background-color: #F2F0FA;
+    padding: 10px;
+    position: relative;
+    transform: translate(10px, 0);
+    color: #5C42CC;
+    font-family: "Roboto Mono", monospace;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px 0 rgba(62, 62, 62, 0.3);
+}
+::-webkit-calendar-picker-indicator{
+    background-color: #A191E6;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 8px 0 rgba(62, 62, 62, 0.3);
+}
+
+
+

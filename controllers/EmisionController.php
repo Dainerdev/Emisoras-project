@@ -1,7 +1,7 @@
 <?php
 
 require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/Emision.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/ProgramaResumen.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/ProgramaRealizar.php";
 require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/ResumenRealizar.php";
 
 
@@ -18,29 +18,29 @@ class EmisionController {
             case "Guardar":
                 
                 // Invocamos el metodo guardar
-                EmisoraController::guardar();
+                EmisionController::guardar();
                 break;
             
             case "Buscar":
                 
                 // Invocamos el metodo buscar
-                EmisoraController::buscar();
+                EmisionController::buscar();
                 break;
 
             case "Editar":
                 
                 // Invocamos el metodo editar
-                EmisoraController::editar();
+                EmisionController::editar();
                 break;
 
             case "Eliminar":
                 // Invocamos el metodo eliminar
-                EmisoraController::eliminar();
+                EmisionController::eliminar();
                 break;
 
             case "todo":
                 // Invocamos el metodo listar todo
-                EmisoraController::listarTodo();
+                EmisionController::listarTodo();
                 break;   
 
             default:
@@ -53,50 +53,51 @@ class EmisionController {
     public static function guardar(){
 
         // Recuperar los campos
-        $nombre = @$_REQUEST["nombre"];
-        $frec = @$_REQUEST["frec"];
-        $transm = @$_REQUEST["trans"];
+        $hinicio = @$_REQUEST["ini"];
+        $durac = @$_REQUEST["durac"];
+        $repet = @$_REQUEST["repe"];
+        $fecha = @$_REQUEST["date"];
 
-        // Crear una instancia de tipo Emisora
-        $u = new Emisora();
+        // Crear una instancia de tipo emision
+        $u = new Emision();
 
         // Ponemos los campos como valores de las propiedades
-        $u-> nombre = $nombre;
-        $u-> frecuencia = $frec;
-        $u-> transmision_id = $transm;
+        $u-> horaInicio = $hinicio;
+        $u-> duracion = $durac;
+        $u-> repeticion = $repet;
+        $u-> fecha = $fecha;
 
-        // Intentar guardar la emisora en la BD
+        // Intentar guardar la emision en la BD
         try {
             
-            // Guardar la emisora
+            // Guardar la emision
             $u->save();
 
-            //contar las emisoras
-            $total = @Emisora::count();
-            $msj = "Emisora guardada correctamente, total: $total";
+            //contar las emision
+            $total = @Emision::count();
+            $msj = "Emisión guardada correctamente, total: $total";
 
             // Redireccionar a la pagina guardar enviando un mensaje
-            header("Location: ../view/forms/emisoras/agregar.php?msj=$msj");
+            header("Location: ../view/forms/emisiones/agregar.php?msj=$msj");
             exit;
 
         } 
         // Capturar algun posible error o excepcion
         catch (Exception $error) {
             
-            
             // Verificar si el error es de PK duplicada
             if (strstr($error->getMessage(), "Duplicate")) {
 
-                $msj = "La emisora $nombre ya existe";
+                $msj = "La emisión ya existe";
 
             } else {
                 
-                // Otro mensaje si no es error por emisora duplicada
-                $msj = "Ha ocurrido un error al Guardar la emisora";
+                // Otro mensaje si no es error por emision duplicada
+                $msj = "Ha ocurrido un error al Guardar la emisión ";
             }
 
             // Redireccionar a la pagina con el mensaje de error
-            header("Location: ../view/forms/emisoras/agregar.php?msj=$msj");
+            header("Location: ../view/forms/emisiones/agregar.php?msj=$msj");
             exit;
         }
     }
@@ -104,24 +105,29 @@ class EmisionController {
     public static function buscar(){
 
         // Recuparar los campos enviados por el formulario
-        $nombre = @$_REQUEST["nombre"];
+        $ini = @$_REQUEST["ini"];
+        $durac = @$_REQUEST["durac"];
+        $repet = @$_REQUEST["repet"];
+        $fecha = @$_REQUEST["date"];
 
-        // Intentar buscar la emisora en la BD
+        // Intentar buscar la emision en la BD
         try {
             
-            // Buscamos la emisora
-            $u = Emisora::find($nombre);
+            // Buscamos la emision
+            $u = Emision::find('first', array('conditions' => array(
+                'fecha = ?, duracion = ?, repeticion = ? AND horaInicio = ?',
+                $fecha, $durac, $repet, $ini)));
 
-            // Colocamos la emisora en la sesion 
-            $_SESSION["emisora.find"] = serialize($u);
-            $msj = "Emisora encontrada";
+            // Colocamos la emision en la sesion 
+            $_SESSION["emision.find"] = serialize($u);
+            $msj = "Emision encontrada";
 
             // Redireccionar la pagina al buscar, enviando un msj
-            header("Location: ../view/forms/emisoras/buscar.php?msj=$msj");
+            header("Location: ../view/forms/emisiones/buscar.php?msj=$msj");
             exit;
 
-            $_SESSION["emisora.find"] = NULL;
-            header("Location: ../view/forms/emisoras/buscar.php");
+            $_SESSION["emision.find"] = NULL;
+            header("Location: ../view/forms/emisiones/buscar.php");
             exit;
 
         } 
@@ -129,22 +135,21 @@ class EmisionController {
         // Capturar algun posible error o excepcion
         catch (Exception $error) {
             
-            // Verificar si la emisora existe mediante PK
-            if (strtr($error->getMessage(), $nombre)) {
+            // Verificar si la emision existe mediante PK
+            if (strtr($error->getMessage(), $fecha)) {
                 // msj si no es por no existencia
-                $msj = "Ha ocurrido un error al Buscar la emisora";
+                $msj = "Ha ocurrido un error al Buscar la emision";
 
             } 
             else {
                 // Otro msj si no existe
-                $msj = "La emisora con Nombre: $nombre no existe";
+                $msj = "La emision no existe";
             }
 
             // Redureccionamos a la pagina buscar con el mensaje de error
-            $_SESSION["emisora.find"] = NULL;
-            header("Location: ../view/forms/emisoras/buscar.php?msj=$msj");
+            $_SESSION["emision.find"] = NULL;
+            header("Location: ../view/forms/emisiones/buscar.php?msj=$msj");
         }
-
     }
 
     public static function editar(){
@@ -301,3 +306,5 @@ class EmisionController {
     }
 
 }
+
+EmisionController::ejecutarAccion();

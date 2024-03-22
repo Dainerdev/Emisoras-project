@@ -18,7 +18,7 @@ try {
 
 } catch (Exception $error) {
     $msj = $error-> getMessage();
-    if (strstr($msj, "Duplicate") !== false) {
+    if (strstr($msj, "Duplicate") != false) {
         echo "La productora que intentas guardar ya existe. <br>";
         $total = Productora::count();
         echo "Total: $total Productoras almacenadas.";
