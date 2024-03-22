@@ -11,8 +11,8 @@ class ProgramaResumen extends ActiveRecord\Model{
     );
 
     static $has_many = array(
-        array('emitirResumenes'),
-        array('resumenesRealizan'),
+        array('emitirResumen', 'class_name' => 'emitirResumen'),
+        array('resumenRealizar', 'class_name' => 'resumenRealizar'),
         array('personas', 'class_name' => 'Persona', 'foreign_key' => 'progResumen_id')
     );
 }

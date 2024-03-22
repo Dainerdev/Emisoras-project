@@ -277,30 +277,29 @@ class EmisionController {
 
         try {  
                       
-            // Obtenemos todas la emisoras
-            $emisoras = Emisora::all();
-            if ($emisoras == NULL) {
-                $_SESSION["emisoras.all"];
-                $msj = "Total Emisoras: 0";
+            // Obtenemos todas la emisiones
+            $emisiones = Emision::all(array('include' => 'horaInicio'));
+            if ($emisiones == NULL) {
+                $_SESSION["emisiones.all"];
+                $msj = "Total Emisiones: 0";
             } else {
-                $total = count($emisoras) -1;
+                $total = count($emisiones) ;
 
                 // Convertimos a texto (serializamos)
-                $emisoras = serialize($emisoras);
+                $emisiones = serialize($emisiones);
 
-                /*  Colocamos la lista de emisoras en la sesion para poder
-                    recuperarla en la pagina de reporte de emisoras
+                /*  Colocamos la lista de emisiones en la sesion para poder
+                    recuperarla en la pagina de reporte de emisiones
                 */
-                $_SESSION["emisoras.all"] = $emisoras;
+                $_SESSION["emisiones.all"] = $emisiones;
             }
 
             // Redireccionamos a la pagina de reportes
-            $msj = "Total Emisoras: $total";
-            header("Location: ../view/forms/emisoras/listarEmisoras.php?msj=$msj");
+            header("Location: ../view/forms/emisiones/listarEmisiones.php?msj=$msj");
 
         } catch (Exception $error) {
-            $_SESSION["emisoras.all"] = NULL;
-            header("Location: ../view/forms/emisoras/listarEmisoras.php?msj=Total Emisoras: 0");
+            $_SESSION["emisiones.all"] = NULL;
+            header("Location: ../view/forms/emisiones/listarEmisiones.php?msj=Total Emisoras: 0");
 
         }
     }

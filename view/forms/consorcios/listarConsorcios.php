@@ -48,10 +48,12 @@
                 <div>
                     <div class="card">
                         <div class="idx">
+                            <p>ID</p>
                             <p>Emisora</p>
                             <p>Productora</p>
                         </div>
                         <div class="info">
+                            <p><?= $p-> id ?></p>
                             <p><?= $p-> emisora_id ?></p>
                             <p><?= $p-> productora_id ?></p>
                         </div>

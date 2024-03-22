@@ -293,7 +293,7 @@ class EncuestaController {
                 $_SESSION["encuestas.all"];
                 $msj = "Total Encuesta: 0";
             } else {
-                $total = count($encuestas) -1;
+                $total = count($encuestas);
 
                 // Convertimos a texto (serializamos)
                 $encuestas = serialize($encuestas);

@@ -13,6 +13,7 @@
 
 body {
     background-color: #F2F0FA;
+    font-family: arial;
 }
 
 .title-form {
