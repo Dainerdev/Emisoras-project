@@ -6,6 +6,7 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/Programa.php"
 require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/EmitirResumen.php";
 require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/Persona.php";
 require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/ResumenRealizar.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/Productora.php";
 
 class ProgResumenController {
 
@@ -64,8 +65,8 @@ class ProgResumenController {
 
         // Ponemos los campos como valores de las propiedades
         $u-> nombre = $nombre;
-        $u-> programa_id = $prog;
-        $u-> consorcio_id = $cons;
+        $u-> programaid = $prog;
+        $u-> consorcioid = $cons;
 
         // Intentar guardar el programa en la BD
         try {
@@ -112,7 +113,7 @@ class ProgResumenController {
         try {
             
             // Buscamos el programa
-            $u = ProgramaResumen::find('first', array('conditions' => array('nombre = ?', $nombre)));
+            $u = ProgramaResumen::find($nombre);
 
             // Colocamos el programa en la sesion 
             $_SESSION["progResumen.find"] = serialize($u);
@@ -173,8 +174,8 @@ class ProgResumenController {
 
         // Los colocamos en el programa consultado
         $u-> nombre = $nombre;
-        $u-> programa_id = $prog;
-        $u-> consorcio_id = $cons;
+        $u-> programaid = $prog;
+        $u-> consorcioid = $cons;
 
         // Intentar guardar los cambios de el programa en la BD
         try {

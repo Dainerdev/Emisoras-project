@@ -58,7 +58,7 @@
                             <p><?= $p-> aprovaciones ?></p>
                             <p><?= $p-> indiferencias ?></p>
                             <p><?= $p-> rechazos ?></p>
-                            <p><?= $p-> programa_id ?></p>
+                            <p><?= $p-> programaid ?></p>
                         </div>
                     </div>
                 </div>

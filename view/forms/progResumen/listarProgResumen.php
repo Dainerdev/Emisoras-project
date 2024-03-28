@@ -57,8 +57,8 @@
                         </div>
                         <div class="info">
                             <p><?= $p-> nombre ?></p>
-                            <p><?= $p-> programa_id ?></p>
-                            <p><?= $p-> consorcio_id ?></p>
+                            <p><?= $p-> programaid ?></p>
+                            <p><?= $p-> consorcioid ?></p>
                         </div>
                     </div>
                 </div>

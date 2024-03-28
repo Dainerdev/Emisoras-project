@@ -9,17 +9,12 @@ $u = new Emision();
 $u->duracion = '02:00:00';
 $u->repeticion = 'NO';
 $u->fecha = '2024-03-19';
-$u->horaInicio = '17:38:00';
+$u->horainicio = '17:38:00';
 
 echo $u-> duracion . " - Duracion<br>";
 echo $u-> repeticion . " - Repeticion<br>";
 echo $u-> fecha . " - Fecha<br>";
-echo $u-> horaInicio . " - Hora de Inicio<br>";
-
-
-if ($u-> horaInicio != NULL && $u-> duracion != NULL && $u-> fecha != NULL) {
-        echo "NO estan null <br>";
-}
+echo $u-> horainicio . " - Hora de Inicio<br>";
 
 try {
 

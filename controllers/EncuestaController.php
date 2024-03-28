@@ -66,8 +66,8 @@ class EncuestaController {
         $p-> aprovaciones = $aprov;
         $p-> indiferencias = $indif;
         $p-> rechazos = $rech;
-        $p-> totalEncuestados = $tEncu;
-        $p-> programa_id = $prog;
+        $p-> totalencuestados = $tEncu;
+        $p-> programaid = $prog;
 
         if (empty($prog)) {
             $msj = "Por favor, complete todos los campos.";
@@ -130,7 +130,7 @@ class EncuestaController {
             // Buscamos la encuesta
             $u = Encuesta::find('first', array('conditions' => array(
                 'fecha = ? AND aprobaciones = ? AND indiferencias = ? 
-                AND rechazos = ? AND totalEncuestados = ? AND programa_id = ?',
+                AND rechazos = ? AND totalencuestados = ? AND programaid = ?',
                 $fecha, $aprov, $indif, $rech, $tEncu, $prog)));
 
 
@@ -189,8 +189,8 @@ class EncuestaController {
         $u-> aprovaciones = $aprov;
         $u-> indiferencias = $indif;
         $u-> rechazos = $rech;
-        $u-> totalEnuestados = $tEncu;
-        $u-> programa_id = $prog;
+        $u-> totalenuestados = $tEncu;
+        $u-> programaid = $prog;
 
 
         // Intentar guardar los cambios de la encuesta en la BD

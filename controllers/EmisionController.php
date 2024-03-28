@@ -62,7 +62,7 @@ class EmisionController {
         $u = new Emision();
 
         // Ponemos los campos como valores de las propiedades
-        $u-> horaInicio = $hinicio;
+        $u-> horainicio = $hinicio;
         $u-> duracion = $durac;
         $u-> repeticion = $repet;
         $u-> fecha = $fecha;
@@ -115,7 +115,7 @@ class EmisionController {
             
             // Buscamos la emision
             $u = Emision::find('first', array('conditions' => array(
-                'fecha = ?, duracion = ?, repeticion = ? AND horaInicio = ?',
+                'fecha = ?, duracion = ?, repeticion = ? AND horainicio = ?',
                 $fecha, $durac, $repet, $ini)));
 
             // Colocamos la emision en la sesion 
@@ -155,30 +155,32 @@ class EmisionController {
     public static function editar(){
 
         // Recuparar los campos enviados por el formulario
-        $nombre = @$_REQUEST["nombre"];
+        $id = @$_REQUEST["id"];
 
         // Obtenemos el usuario consultado anteriormente
-        $u = $_SESSION["emisora.find"];
+        $u = $_SESSION["emision.find"];
 
         // Lo deserealizamos y reconvertimos en objeto tipo Emisora
         $u = unserialize($u);
 
         // Validamos que la emisora consultada sea la misma que se desea editar
-        if ($u->nombre != $nombre) {
-            $msj = "El nombre no corresponde con la Emisora consultada";
+        if ($u->id != $id) {
+            $msj = "El ID no corresponde con la Emision consultada";
             header("Locate: ../view/emisoras/forms/buscar.php?msj=$msj");
             exit;
         }
 
         // Recuperamos los campos cambiados en el formulario
-        $nombre = @$_REQUEST["nombre"];
-        $frec = @$_REQUEST["frec"];
-        $trans = @$_REQUEST["trans"];
+        $hinicio = @$_REQUEST["ini"];
+        $durac = @$_REQUEST["durac"];
+        $repet = @$_REQUEST["repe"];
+        $fecha = @$_REQUEST["date"];
 
         // Los colocamos en el usuario consultado
-        $u-> nombre = $nombre;
-        $u-> frecuencia = $frec;
-        $u-> transmision_id = $trans;
+        $u-> horainicio = $hinicio;
+        $u-> duracion = $durac;
+        $u-> repeticion = $repet;
+        $u-> fecha = $fecha;
 
         // Intentar guardar los cambios de la emisora en la BD
         try {
@@ -187,8 +189,8 @@ class EmisionController {
             $u-> save();
 
             // Volvemos a serializar la emisora editada y la guardamos en la sesion
-            $_SESSION["emisora.find"] = serialize($u);
-            $msj = "Emisora editada";
+            $_SESSION["emision.find"] = serialize($u);
+            $msj = "Emision editada";
 
             // Redireccionar la pagina al buscar, enviando un msj
             header("Location: ../view/forms/emisoras/buscar.php?msj=$msj");
@@ -200,8 +202,8 @@ class EmisionController {
         catch (Exception $error) {
             
             // Verificar si la emisora existe mediante PK
-            if (strtr($error->getMessage(), $nombre)) {
-                $msj = "La emisora con Nombre: $nombre no existe";
+            if (strtr($error->getMessage(), $id)) {
+                $msj = "La emision con ID: $id no existe";
             } else {
                 
                 // Otro msj si no es por no existencia
@@ -278,7 +280,7 @@ class EmisionController {
         try {  
                       
             // Obtenemos todas la emisiones
-            $emisiones = Emision::all(array('include' => 'horaInicio'));
+            $emisiones = Emision::all(array('include' => 'horainicio'));
             if ($emisiones == NULL) {
                 $_SESSION["emisiones.all"];
                 $msj = "Total Emisiones: 0";

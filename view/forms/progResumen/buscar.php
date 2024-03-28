@@ -2,12 +2,7 @@
 
     // Obtenemos el mensaje enviado por el controlador
     session_start();
-    require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/Consorcio.php";
     require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/ProgramaResumen.php";
-    require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/Programa.php";
-    require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/EmitirResumen.php";
-    require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/Persona.php";
-    require_once $_SERVER["DOCUMENT_ROOT"] . "emisoras/models/entities/ResumenRealizar.php";
 
     $msj = @$_REQUEST["msj"];
     $u = @$_SESSION["progResumen.find"];    
@@ -37,11 +32,11 @@
                 </div>
                 <div class="input-group">
                     <label for="prog">Programa base: </label>
-                    <input type="text" id="prog" name="prog" value="<?= @$u-> programa_id ?>">
+                    <input type="text" id="prog" name="prog" value="<?= @$u-> programaid ?>">
                 </div>
                 <div class="input-group">
                     <label for="cons">Consorcio: </label>
-                    <input type="text" id="cons" name="cons" value="<?= @$u-> consorcio_id ?>">
+                    <input type="text" id="cons" name="cons" value="<?= @$u-> consorcioid ?>">
                 </div>
                 <input type="button" id="limpiar" name="accion" value="Limpiar" onclick="cleanForm()">
                 <input type="submit" id="buscar" name="accion" value="Buscar">
