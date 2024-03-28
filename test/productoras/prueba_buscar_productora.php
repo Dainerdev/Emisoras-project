@@ -11,6 +11,9 @@ try {
     echo "<b>RFC: </b>" . $prod-> rfc . "<br>";
     echo "<b>Nombre: </b>" . $prod-> nombre . "<br>";
     echo "<b>Telefono: </b>" . $prod-> telefono . "<br>";
+
 } catch (Exception $error) {
+    
     echo $error-> getMessage();
 }
+
